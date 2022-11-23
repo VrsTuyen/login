@@ -17,16 +17,203 @@ body {
 
 .h2-heading {
   font-size: 3.8rem;
-  text-align: left;
+  font-weight: 800;
+  text-align: center;
   width: 100%;
   margin: 0 0 1rem;
 }
 
-.p-paragraph {
-  font-size: 2.2rem;
+.paragraph {
+  font-size: 1.4rem;
   margin: 0;
+  text-align: center;
+  line-height: 2.4rem;
 }
 
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ededed;
+}
+.main .body .title {
+  text-align: center;
+  font-size: 2.4rem;
+  margin: 0 0 8px 0;
+}
+.main .body .container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+}
+.main .body .container .container-right, .main .body .container .container-left {
+  padding: 3.2rem;
+  width: 450px;
+  position: relative;
+}
+.main .body .container .active.container-right, .main .body .container .active.container-left {
+  background-color: #fff;
+}
+.main .body .container-left-content-login {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.6s;
+}
+.main .body .container-left .container-content {
+  transform: translateX(0%);
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.6s;
+}
+.main .body .container-left.active .container-left-content-login {
+  opacity: 1;
+  visibility: visible;
+}
+.main .body .container-left.active .container-content {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.main .body .container-right-content-signup {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+.main .body .container-right .container-content {
+  transform: translateX(0%);
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.6s;
+}
+.main .body .container-right.active .container-right-content-signup {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.6s;
+}
+.main .body .container-right.active .container-content {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.main .body .container-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  text-shadow: 0 0 2px #000;
+  background-color: #eeb649;
+}
+.main .body .container-content .paragraph {
+  margin: 3rem 2rem;
+  font-size: 1.6rem;
+}
+.main .body .container-content-login-other {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main .body .container-content-login-other-border {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 0.01px solid #000;
+  border-radius: 50%;
+  margin: 0 8px;
+  color: #141418;
+}
+.main .body .container-content-login-other-border i {
+  font-size: 1.3rem;
+}
+.main .body .container-content-login-other-title {
+  display: block;
+  margin: 8px 0 16px;
+}
+.main .body .container-content-button {
+  border: 0.5px solid #fff;
+  background: transparent;
+  padding: 1.4rem 4rem;
+  border-radius: 24px;
+  text-transform: uppercase;
+}
+.main .body .container-content-button:hover {
+  cursor: pointer;
+}
+.main .body .container-content-button:active {
+  transform: scale(0.95);
+  transition: all 0.2s;
+}
+.main .body .container .form-container-input {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  margin: 1rem;
+}
+.main .body .container .form-container-input input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  font-size: 1.8rem;
+  border-radius: 8px;
+  border: 0.5px solid #000;
+  background: #ededed;
+  border: none;
+}
+.main .body .container .form-remember {
+  display: flex;
+  justify-content: center;
+}
+.main .body .container .form-remember a {
+  text-decoration: none;
+  color: #eeb649;
+  font-size: 1.6rem;
+}
+.main .body .container .form-remember a:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+}
+.main .body .container .form-submit {
+  display: flex;
+  margin: 16px 0;
+  justify-content: center;
+  width: 100%;
+}
+.main .body .container .form-submit input[type=submit] {
+  padding: 12px 0;
+  font-size: 1.8rem;
+  border: none;
+  background-color: #eeb649;
+  color: #fff;
+  border-radius: 8px;
+  padding: 12px 32px;
+  text-transform: uppercase;
+}
+.main .body .container .form-submit input[type=submit]:hover {
+  cursor: pointer;
+  filter: brightness(0.9);
+  transition: all 0.4s;
+}
+.main .body .container .form-validate {
+  font-size: 1.6rem;
+  color: #fd5e00;
+  padding-left: 16px;
+}
 .main .login {
   position: fixed;
   top: 0;
@@ -39,12 +226,12 @@ body {
   flex-direction: column;
 }
 .main .login-title {
-  max-width: 400px;
+  max-width: 450px;
   width: 100%;
   padding-bottom: 2rem;
 }
 .main .login-form {
-  max-width: 400px;
+  max-width: 450px;
   width: 100%;
 }
 .main .login-form-container {
@@ -62,46 +249,16 @@ body {
   border-radius: 8px;
   overflow: hidden;
 }
-.main .login-form-container-input input {
-  border: none;
-  outline: none;
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 8px;
-  font-size: 1.8rem;
-}
-.main .login-form-validate {
-  font-size: 1.6rem;
-  color: #EFC14F;
-}
 .main .login-form-remember {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 1.8rem;
-  padding: 1rem 0 1rem 0;
+  padding: 1rem 0 1.6rem 0;
 }
 .main .login-form-remember a {
   text-decoration: none;
   color: #9896EA;
-}
-.main .login-form-submit {
-  display: block;
-}
-.main .login-form-submit input[type=submit] {
-  width: 100%;
-  padding: 12px 0;
-  font-size: 1.8rem;
-  border: none;
-  background-color: #3E38F5;
-  color: #fff;
-  border-radius: 8px;
-}
-.main .login-form-submit input[type=submit]:hover {
-  cursor: pointer;
-  filter: brightness(1.3);
-  transition: all 0.4s;
 }
 .main .login-form-create-account {
   font-size: 1.8rem;
