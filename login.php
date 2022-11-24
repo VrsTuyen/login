@@ -11,7 +11,6 @@ if (isset($_POST['submit_login'])) {
   } elseif (empty($password)) {
     $validate = "Please enter your password";
   } else {
-
     try {
       $sql = "select username from user where email = :email and password = :password";
 
@@ -21,12 +20,11 @@ if (isset($_POST['submit_login'])) {
       $statement->execute();
 
       $statement->setFetchMode(PDO::FETCH_ASSOC);
-
       $users = $statement->fetchAll();
+
       foreach ($users as $user) {
         $username = $user['username'];
       }
-
       $count = $statement->rowCount();
       if ($count <= 0) {
         $validate = 'Invalid email or password';

@@ -71,26 +71,21 @@ body {
   visibility: visible;
   transition: all 0.6s;
 }
-.main .body .container-left.active .container-left-content-login {
-  opacity: 1;
-  visibility: visible;
-}
 .main .body .container-left.active .container-content {
   transform: translateX(100%);
   opacity: 0;
 }
-.main .body .container-right-content-signup {
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s;
-}
-.main .body .container-right .container-content {
-  transform: translateX(0%);
+.main .body .container .container-right.active .container-right-content-signup, .main .body .container-right.active .container .container-right-content-signup, .main .body .container .container-left.active .container-left-content-login, .main .body .container-left.active .container .container-left-content-login {
   opacity: 1;
   visibility: visible;
   transition: all 0.6s;
 }
-.main .body .container-right.active .container-right-content-signup {
+.main .body .container-right-content-signup {
+  opacity: 0;
+  visibility: hidden;
+}
+.main .body .container-right .container-content {
+  transform: translateX(0%);
   opacity: 1;
   visibility: visible;
   transition: all 0.6s;
@@ -213,59 +208,6 @@ body {
   font-size: 1.6rem;
   color: #fd5e00;
   padding-left: 16px;
-}
-.main .login {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.main .login-title {
-  max-width: 450px;
-  width: 100%;
-  padding-bottom: 2rem;
-}
-.main .login-form {
-  max-width: 450px;
-  width: 100%;
-}
-.main .login-form-container {
-  margin: 16px 0;
-}
-.main .login-form-container:last-child {
-  margin: 16px 0 8px 0;
-}
-.main .login-form-container label {
-  font-size: 1.8rem;
-}
-.main .login-form-container-input {
-  width: 100%;
-  border: 1px solid #141418;
-  border-radius: 8px;
-  overflow: hidden;
-}
-.main .login-form-remember {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 1.8rem;
-  padding: 1rem 0 1.6rem 0;
-}
-.main .login-form-remember a {
-  text-decoration: none;
-  color: #9896EA;
-}
-.main .login-form-create-account {
-  font-size: 1.8rem;
-}
-.main .login-form-create-account a {
-  text-decoration: none;
-  color: #9896EA;
 }
 
 /*# sourceMappingURL=style.css.map */

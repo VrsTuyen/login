@@ -82,6 +82,7 @@ body {
         }
       }
 
+
       &-left {
         @extend %layout;
 
@@ -101,21 +102,20 @@ body {
         &.active {
           .container {
             &-left-content-login {
-
-              opacity: 1;
-              visibility: visible;
-            }
+            @extend %form-active;
+          }
 
             &-content {
               transform: translateX(100%);
               opacity: 0;
-
             }
           }
         }
-
-
-
+      }
+      %form-active{
+        opacity: 1;
+        visibility: visible;
+        transition: all .6s;
       }
 
       &-right {
@@ -124,7 +124,6 @@ body {
         &-content-signup {
           opacity: 0;
           visibility: hidden;
-          transition: all .3s;
         }
 
         .container-content {
@@ -137,9 +136,7 @@ body {
         &.active {
           .container {
             &-right-content-signup {
-              opacity: 1;
-              visibility: visible;
-              transition: all .6s;
+              @extend %form-active;
             }
 
             &-content {
@@ -293,76 +290,5 @@ body {
       }
 
     }
-  }
-
-  .login {
-    &-title {
-      max-width: $mx-width;
-      width: 100%;
-      padding-bottom: 2rem;
-    }
-
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    &-form {
-      max-width: $mx-width;
-      width: 100%;
-
-      &-container {
-        margin: 16px 0;
-
-        &:last-child {
-          margin: 16px 0 8px 0;
-        }
-
-        label {
-          font-size: 1.8rem;
-        }
-
-        &-input {
-          width: 100%;
-          border: 1px solid $text-color;
-          border-radius: 8px;
-          overflow: hidden;
-
-
-        }
-      }
-
-
-
-      &-remember {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        font-size: 1.8rem;
-        padding: 1rem 0 1.6rem 0;
-
-        a {
-          text-decoration: none;
-          color: $link-color;
-        }
-      }
-
-
-
-      &-create-account {
-        font-size: 1.8rem;
-
-        a {
-          text-decoration: none;
-          color: $link-color;
-        }
-      }
-    }
-
   }
 }

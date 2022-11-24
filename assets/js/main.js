@@ -1,14 +1,9 @@
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
-$$('form').forEach((element) => {
-  console.log({element})
-});
-
 function setActive(content_1, content_2) {
   content_1.classList.toggle('active');
   content_2.classList.toggle('active');
-
 }
 
 $$('.container-content-button').forEach(element => {
@@ -19,7 +14,3 @@ $$('.container-content-button').forEach(element => {
     setActive(notActive, active)
   })
 });
-
-// function setStorage(){
-//   localStorage.setItem();
-// }
